@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- <html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Staff</title>
+</head>
+<body>
+	<center>
+	<h2>Enter Staff Member Details</h2>
+		<form action="/lms/addStaff" method="post">
+		    Name<input type="text" name="staffName" placeholder="anyName"/>
+			<br/>
+			Email<input type="text" name="staffEmail" placeholder="username@lms.in"/>
+			<br/>
+			Department<input type="text" name="staffDepartment" placeholder="anyDepartment"/>
+			<br/>
+			Designation<input type="text" name="staffDesignation" placeholder="anyDesignation"/>
+			<br/>
+			Mobile<input type="text" name="staffMobileNo" placeholder="anyMobile"/>
+			<br/>
+			Gender<input type="text" name="staffGender" placeholder="Male/Female"/>
+			<br/>
+			<br/>
+			<input type="SUBMIT" value="ADD STAFF MEMBER"/>
+		</form>
+	</center>
+</body>
+</html> -->
+
+<html lang="en">
+<head>
+  <title>Update Staff</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ <style>
+ .container {
+  background-color: white;
+  text-align: none;
+  padding: 50px 25px;
+  box-sizing: border-box;
+  width:800px;
+  margin:8px auto;
+  font-family: Poppins-Medium;
+  border-radius: 15px;
+  box-shadow: 3px 3px 5px 5px;
+}
+.btn{
+	width:50%;
+	background-color:#800000;
+	color:white;
+	border-radius: 25px;
+	
+}
+</style>
+</head>
+<div style="background-image: url('2.jpg'); background-size: cover;">
+<div class="container">
+<h1>Update Staff</h1>
+<div class="row">
+<div class="col-sm">
+<!-- <form action="#" th:object="${staff}" th:action="@{/lms/updateStaff/{id}(id=${staff.staffId})}"  method="post"> -->
+<form action="/lms/updateStaff"  method="post">
+<label>Staff Member Id</label>
+<input type="text" style="width:100%; border-radius: 5px;" placeholder="Id" name="staffId" required></br></br>
+<label>Staff Member Name</label>
+<input type="text" style="width:100%; border-radius: 5px;" placeholder="Name" name="staffName" required></br></br>
+<label>Staff Member Email</label>
+<input type="text" style="width:100%; border-radius: 5px;" placeholder="Email" name="staffEmail" required></br></br>
+<label>Department</label>
+<input type="text" style="width:100%; border-radius: 5px;" placeholder="Department" name="staffDepartment" required></br></br>
+<label>Designation</label>
+<input type="text" style="width:100%; border-radius: 5px;" placeholder="Designation" name="staffDesignation" required></br></br>
+<!-- <label>Select Batch</label>
+<select id="batch"style="width:100%; border-radius: 5px;" name="batch">
+    <option value="sbatch">Select batch</option>
+    <option value="">sdad</option>
+    <option value="">vue</option>
+    <option value="">css</option>
+</select></br></br> -->
+</div>
+<div class="col-sm">
+<label>Mobile</label>
+<input type="text" style="width:100%; border-radius: 5px;" placeholder="Mobile" name="staffMobileNo" required></br></br>
+<label>Gender</label>
+<input type="text" style="width:100%; border-radius: 5px;" placeholder="Male/Female/Other" name="staffGender" required></br></br>
+<!-- <label>Course Fee</label>
+<input type="number" style="width:100%; border-radius: 5px;" placeholder="0" name="number" required></br></br>
+<label>Address</label>
+<input type="text" style="width:100%; border-radius: 5px;" placeholder="Address" name="address" required></br></br> -->
+<button type="submit" class="btn">UPDATE STAFF MEMBER</button></br></br>
+</div>
+</form>
+</div>
+</div>
+</body>
+</html>

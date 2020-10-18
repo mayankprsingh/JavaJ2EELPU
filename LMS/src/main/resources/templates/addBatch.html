@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+  <title>Add Batch</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ <style>
+ .container {
+  background-color: white;
+  text-align: none;
+  padding: 50px 25px;
+  box-sizing: border-box;
+  width:800px;
+  margin:8px auto;
+  font-family: Poppins-Medium;
+  border-radius: 15px;
+  box-shadow: 3px 3px 5px 5px;
+}
+.btn{
+	width:50%;
+	background-color:#800000;
+	color:white;
+	border-radius: 25px;
+	
+}
+</style>
+</head>
+<div style="background-image: url('2.jpg'); background-size: cover;">
+<div class="container">
+<h1>Add Batch</h1>
+<div class="row">
+<div class="col-sm">
+<form action="/lms/addBatch" method="post">
+<label>Batch Name</label>
+<input type="text" style="width:100%; border-radius: 5px;" placeholder="Batch Name" name="batchName" required></br></br>
+<label>Batch Year</label>
+<input type="text" style="width:100%; border-radius: 5px;" placeholder="Batch Year" name="batchYear" required></br></br>
+<label>Fee Per Student</label>
+<input type="text" style="width:100%; border-radius: 5px;" placeholder="Fee in Rupees" name="feePerStudent" required></br></br>
+<label>Number Of Students</label>
+<input type="text" style="width:100%; border-radius: 5px;" placeholder="Number Of Students" name="numberOfStudents" required></br></br>
+<!-- <label>Select Batch</label>
+<select id="batch"style="width:100%; border-radius: 5px;" name="batch">
+    <option value="sbatch">Select batch</option>
+    <option value="">sdad</option>
+    <option value="">vue</option>
+    <option value="">css</option>
+</select></br></br> -->
+</div>
+<div class="col-sm">
+<label>Fee Status</label>
+<input type="text" style="width:100%; border-radius: 5px;" placeholder="Fee" name="feeStatus" required></br></br>
+<label>Handle By</label>
+<input type="text" style="width:100%; border-radius: 5px;" placeholder="Staff Member Name" name="staff" required></br></br>
+<!-- <label>Course Fee</label>
+<input type="number" style="width:100%; border-radius: 5px;" placeholder="0" name="number" required></br></br>
+<label>Address</label>
+<input type="text" style="width:100%; border-radius: 5px;" placeholder="Address" name="address" required></br></br> -->
+<button type="submit" class="btn">ADD BATCH</button></br></br>
+</div>
+</form>
+</div>
+</div>
+</body>
+</html>

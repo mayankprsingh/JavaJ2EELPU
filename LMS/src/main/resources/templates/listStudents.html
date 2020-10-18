@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Student</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="listStudent.css"> -->
+<style>
+body
+{
+    counter-reset: Serial;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+th {
+  background-color: #282e28	;
+  color: white;
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+tr td:first-child:before
+{
+  counter-increment: Serial;      
+  content: counter(Serial); 
+}
+.one{
+	font-family:comicsans;
+	box-shadow: 3px 3px 5px 5px;
+	width:100%;
+	
+}
+#batch{
+	padding:5px;
+	
+}
+.btn1{
+	border-radius: 20px;
+	background-color:red;
+	color:white;
+}
+.btn2{
+	border-radius: 20px;
+	background-color:orange;
+	color:black;
+}
+.btn3{
+	border-radius: 20px;
+	background-color:grey;
+	color:white;
+}
+</style>
+</head>
+<body style="height:1500px">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">LPU</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/lms/dashboard">Dashboard</a></li>
+      <li><a href="/lms/listStaff">Staff</a></li>
+      <li><a href="/lms/listBatches">Batch</a></li>
+      <li><a href="/lms/listStudents">Students</a></li>
+    </ul>
+	<ul class="nav navbar-nav navbar-right">
+      <li><a href="http://localhost:8008/"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+    </ul>
+  </div>
+</nav></br></br></br>
+<center>
+<div class="one">
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm">
+<h1>Students</h1>
+</div>
+<div class="row">
+<div class="col-sm">
+<select id="batch" name="batch">
+    <option value="sbatch">Select batch</option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+  </select>
+</div></br>
+<div class="col-sm">
+<button type="student" onclick="myFunction()" class="btn2">ADD STUDENT</button>
+</div></br>
+<div class="col-sm">
+<button type="filter" class="btn3">FILTER</button>
+</div>
+</br>
+</div>
+</div>
+</div>
+</div>
+</center>
+<script>
+function myFunction() {
+  location.href = "/lms/clickAddStudent";
+}
+function updateFunction() {
+	location.href = "/lms/clickStudentUpdate";
+}
+</script>
+</br>
+</br>
+	<table>
+             <thead>
+                <tr>
+                    <th>Sr.No</th>
+                    <th>Registration No</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>D.O.B</th>
+                    <th>Admission Date</th>
+                    <th>Gender</th>
+                    <th>Delete</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="student : ${studentList}">
+                     <td></td>
+                     
+                    <td th:text="${student.registrationNumber}"></td>
+                    <td th:text="${student.studentName}"></td>
+                    <td th:text="${student.studentEmail}"></td>                    
+                    <td th:text="${student.studentMobileNo}"></td>
+                    <td th:text="${student.studentDateOfBirth}"></td>
+                    <td th:text="${student.studentAdmiDate}"></td>
+                    <td th:text="${student.studentGender}"></td>
+                    <td><a th:href="@{/lms/deleteStudent/{id}(id=${student.studentId})}">Delete</a></td>>
+                    <td><button type="student" onclick="updateFunction()" class="btn1">Update</button></td>>
+                </tr>
+            </tbody>
+    </table>
+</body>
+</html>
